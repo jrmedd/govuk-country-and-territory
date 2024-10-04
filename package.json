@@ -1,6 +1,6 @@
 {
   "name": "govuk-country-and-territory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The GOV.UK country and territory selector for the GOV.UK prototype kit",
   "repository": {
     "type": "git",
