@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "description": "Use this GOV.UK Prototype Kit plugin to add a country and territory selector.",
+    "urls": {
+      "documentation": "https://github.com/jrmedd/govuk-notificatons",
+      "releaseNotes": "https://github.com/jrmedd/govuk-notificatons",
+      "versionHistory": "https://npmjs.com/package/govuk-notifications?activeTab=versions"
+    }
+  },
+  "pluginDependencies": [
+    "govuk-prototype-kit"
+  ],
+  "nunjucksPaths": [
+    "/"
+  ],
+  "nunjucksMacros": [
+    {
+      "macroName": "govukCountryAndTerritory",
+      "importFrom": "govukCountryAndTerritory/components/govukCountryAndTerritory.njk"
+    }
+  ],
+  "nunjucksFilters": [
+    "/lib/filters.js"
+  ],
+  "sass": [
+    "/scss/styles.scss",
+    "/scss/overrides.scss"
+  ],
+  "scripts": [
+    "/scripts/location-autocomplete-graph.json",
+    "/scripts/location-autocomplete-canonical-list.json",
+    "/scripts/javascript.js",
+    "/scripts/load.js"
+  ]
+}

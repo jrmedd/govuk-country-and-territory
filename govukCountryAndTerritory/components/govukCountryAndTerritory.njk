@@ -1,0 +1,17 @@
+{% macro govukCountryAndTerritory(params) %}
+{%- set locations -%}
+  {%- if params.locations -%}{{ params.locations }}
+  {%- else-%}
+  {% include "../../scripts/location-autocomplete-canonical-list.json" %}
+  {%- endif -%}
+{%- endset -%}
+{% set id %}{{ params.id if params.id else 'govuk-country-and-territory-autocomplete' }}{% endset %}
+{% set label %}{{ params.label.text if params.label.text else 'Select a country or territory' }}{% endset %}
+<label class="govuk-label" for='{{ id }}'>{{ label }}</label>
+<select class='govuk-select' id='{{ id }}' data-module='govuk-country-and-territory-autocomplete'>
+  <option value="" disabled selected>Pick an option</option>
+  {% for location in locations | json %}
+  <option value='{{ location[1] }}'>{{ location[0] }}</option>
+  {% endfor %}
+</select>
+{% endmacro %}

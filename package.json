@@ -1,0 +1,43 @@
+{
+  "name": "govuk-country-and-territory",
+  "version": "1.0.0",
+  "description": "The GOV.UK country and territory selector for the GOV.UK prototype kit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrmedd/govuk-country-and-territory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jrmedd/govuk-country-and-territory/issues"
+  },
+  "homepage": "https://github.com/jrmedd/govuk-country-and-territory#readme",
+  "keywords": [
+    "prototyping",
+    "government",
+    "govuk-prototype-kit",
+    "country",
+    "autocomplete",
+    "territory"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "compile": "node compile.js"
+  },
+  "author": "jrmedd",
+  "license": "ISC",
+  "files": [
+    "govukCountryAndTerritory",
+    "lib",
+    "scss",
+    "scripts",
+    "govuk-prototype-kit.config.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "govuk-prototype-kit": "^13.0.0"
+  },
+  "dependencies": {
+    "govuk-country-and-territory-autocomplete": "^2.0.0"
+  }
+}
