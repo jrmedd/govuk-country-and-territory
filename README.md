@@ -1,4 +1,4 @@
-# GOV.UK prototype kit notifications plugin
+# GOV.UK prototype kit country and territory autocomplete plugin
 
 A basic implementation of the [govuk-country-and-territory-autocomplete](https://github.com/alphagov/govuk-country-and-territory-autocomplete) component for use in the GOV.UK prototype kit.
 
