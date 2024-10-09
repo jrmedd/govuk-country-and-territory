@@ -7,6 +7,7 @@
   {%- endif -%}
 {%- endset -%}
 {% set id %}{{ params.id if params.id else 'govuk-country-and-territory-autocomplete' }}{% endset %}
+{% set name %}{{ params.name if params.name else 'govuk-country-and-territory-autocomplete' }}{% endset %}
 {% set label %}{{ params.label.text if params.label.text else 'Select a country or territory' }}{% endset %}
 <div class="{{classList}} {{ 'govuk-form-group--error' if params.errorMessage.text }}">
   <label class="govuk-label" for='{{ id }}'>{{ label }}</label>
@@ -15,7 +16,7 @@
     {{ params.errorMessage.text }}
   </div>
   {% endif %}
-  <select class='govuk-select' id='{{ id }}' data-module='govuk-country-and-territory-autocomplete'>
+  <select class='govuk-select' id='{{ id }}' name="{{name}}" data-module='govuk-country-and-territory-autocomplete'>
     <option value="" disabled selected>Pick an option</option>
     {% for location in locations | json %}
     <option value='{{ location[1] }}'>{{ location[0] }}</option>
