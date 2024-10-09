@@ -13,7 +13,7 @@
   </div>
   {% endif %}
   <select value="{{ value }}" class='govuk-select' id='{{ id }}' name="{{name}}" data-module='govuk-country-and-territory-autocomplete'>
-    <option value="" disabled {% if value == '' -%}selected{% endif %}>Pick an option</option>
+    <option value="" disabled {% if value == '' %}selected{% endif %}>Pick an option</option>
     {% for location in locations | json %}
     <option value='{{ location[1] }}' {% if value == location[1] %}selected{% endif %}>{{ location[0] }}</option>
     {% endfor %}
