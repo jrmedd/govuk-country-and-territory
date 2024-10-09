@@ -12,10 +12,10 @@
     {{ params.errorMessage.text }}
   </div>
   {% endif %}
-  <select class='govuk-select' id='{{ id }}' name="{{name}}" data-module='govuk-country-and-territory-autocomplete'>
-    <option value="" disabled {%- if params.value | length == 0 -%}selected{%- endif -%}>Pick an option</option>
+  <select value="{{ value }}" class='govuk-select' id='{{ id }}' name="{{name}}" data-module='govuk-country-and-territory-autocomplete'>
+    <option value="" disabled {%- if value | length == 0 -%}selected{%- endif -%}>Pick an option</option>
     {% for location in locations | json %}
-    <option value='{{ location[1] }}' {%- if params.value == location[1] -%}selected{%- endif -%}>{{ location[0] }}</option>
+    <option value='{{ location[1] }}' {%- if value == location[1] -%}selected{%- endif -%}>{{ location[0] }}</option>
     {% endfor %}
   </select>
 </div>
