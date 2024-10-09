@@ -3,6 +3,7 @@ window.addEventListener('load', event => {
     openregisterLocationPicker({
       selectElement: document.querySelector('[data-module="govuk-country-and-territory-autocomplete"]'),
       defaultValue: '',
+      name: element.name,
       url: '/plugin-assets/govuk-country-and-territory/scripts/location-autocomplete-graph.json'
     })
   })
