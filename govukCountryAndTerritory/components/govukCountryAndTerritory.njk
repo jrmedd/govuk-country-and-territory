@@ -1,14 +1,10 @@
 {% macro govukCountryAndTerritory(params) %}
 {%- set classList = 'govuk-form-group' + ' ' + params.classes if params.classes else 'govuk-form-group' -%}
-{%- set locations -%}
-  {%- if params.locations -%}{{ params.locations }}
-  {%- else-%}
-  {% include "../../scripts/location-autocomplete-canonical-list.json" %}
-  {%- endif -%}
-{%- endset -%}
+{%- set locations -%}{%- include "../../scripts/location-autocomplete-canonical-list.json" -%}{%- endset -%}
 {% set id %}{{ params.id if params.id else 'govuk-country-and-territory-autocomplete' }}{% endset %}
 {% set name %}{{ params.name if params.name else 'govuk-country-and-territory-autocomplete' }}{% endset %}
 {% set label %}{{ params.label.text if params.label.text else 'Select a country or territory' }}{% endset %}
+{% set value %}{{ params.value if params.value else '' }}{% endset %}
 <div class="{{classList}} {{ 'govuk-form-group--error' if params.errorMessage.text }}">
   <label class="govuk-label" for='{{ id }}'>{{ label }}</label>
   {% if params.errorMessage.text %}
@@ -17,9 +13,9 @@
   </div>
   {% endif %}
   <select class='govuk-select' id='{{ id }}' name="{{name}}" data-module='govuk-country-and-territory-autocomplete'>
-    <option value="" disabled selected>Pick an option</option>
+    <option value="" disabled {%- if params.value | length == 0 -%}selected{%- endif -%}>Pick an option</option>
     {% for location in locations | json %}
-    <option value='{{ location[1] }}'>{{ location[0] }}</option>
+    <option value='{{ location[1] }}' {%- if params.value == location[1] -%}selected{%- endif -%}>{{ location[0] }}</option>
     {% endfor %}
   </select>
 </div>
